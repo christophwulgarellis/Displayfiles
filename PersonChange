@@ -1,0 +1,121 @@
+     A*%%TS  SD  20251209  131650  KURS09      REL-V7R5M0  5770-WDS
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      PRINT
+     A                                      INDARA
+     A                                      ALTHELP(CA01)
+     A                                      CF02(02)
+     A                                      CF03(03)
+     A                                      CF04(04)
+     A                                      CF05(05)
+     A                                      CF06(06)
+     A                                      CF07(07)
+     A                                      CF08(08)
+     A                                      CF09(09)
+     A                                      CF10(10)
+     A                                      CF11(11)
+     A                                      CF12(12)
+     A                                      CF13(13)
+     A                                      CF14(14)
+     A                                      CF15(15)
+     A                                      CF16(16)
+     A                                      CF17(17)
+     A                                      CF18(18)
+     A                                      CF19(19)
+     A                                      CF20(20)
+     A                                      CF21(21)
+     A                                      CF22(22)
+     A                                      CF23(23)
+     A                                      CF24(24)
+     A                                      PAGEUP(27)
+     A                                      PAGEDOWN(28)
+     A                                      HELP
+     A                                      VLDCMDKEY(25)
+     A          R F0RECORD
+     A*%%TS  SD  20251209  131650  KURS09      REL-V7R5M0  5770-WDS
+     A                                      CHANGE(29)
+     A                                      RTNCSRLOC(&F0CSRFMT &F0CSRFLD &F0CS-
+     A                                      RPOS)
+     A                                      RTNCSRLOC(*WINDOW &LINE &POS)
+     A  86                                  CSRLOC(LINE       POS)
+     A                                      OVERLAY
+     A                                      KEEP
+     A            F0CSRFMT      10A  H
+     A            F0CSRFLD      10A  H
+     A            F0CSRPOS       4S 0H
+     A            POS            3S 0H
+     A            LINE           3S 0H
+     A            F0JOBNAME     10A  H
+     A            F0USER        10A  H
+     A            F0POS          3S 0H
+     A            F0LINE         3S 0H
+     A            F0PGMNAME     10A  O  1  2
+     A                                  1 31'Person ändern      '
+     A                                      COLOR(WHT)
+     A                                  1 61DATE(*SYS *YY)
+     A                                      EDTCDE(Y)
+     A                                  1 72TIME
+     A            F0USERID      10A  O  2  2
+     A                                  2 72SYSNAME
+     A                                  5  2'Daten eingeben und die Eingabetast-
+     A                                      e drücken.'
+     A                                      COLOR(BLU)
+     A                                  7  2'Vorname . . . . . .'
+     A            F0VORNAME     50A  B  7 23
+     A  31                                  DSPATR(PC)
+     A  31                                  DSPATR(RI)
+     A                                      CHECK(LC)
+     A                                 23  2'F3=Abbrechen   F5=Aktualisieren   -
+     A                                      F12=Abbrechen'
+     A                                      COLOR(BLU)
+     A                                  8  2'Nachname. . . . . .'
+     A                                  9  2'Titel . . . . . . .'
+     A                                 10  2'Geburtsdatum. . . .'
+     A                                 11  2'Geburtsort. . . . .'
+     A                                 12  2'Nationalität. . . .'
+     A                                 14  2'Größe . . . . . . .'
+     A                                 15  2'Augenfarbe. . . . .'
+     A            F0NACHNAME    50A  B  8 23
+     A  32                                  DSPATR(RI)
+     A  32                                  DSPATR(PC)
+     A                                      CHECK(LC)
+     A            F0TITEL       20A  B  9 23
+     A  33                                  DSPATR(RI)
+     A  33                                  DSPATR(PC)
+     A                                      CHECK(LC)
+     A            F0GEBDATUM     8A  B 10 23
+     A  34                                  DSPATR(RI)
+     A  34                                  DSPATR(PC)
+     A            F0GEBORT      30A  B 11 23
+     A  35                                  DSPATR(RI)
+     A  35                                  DSPATR(PC)
+     A                                      CHECK(LC)
+     A            F0NATION       2A  B 12 23
+     A  36                                  DSPATR(RI)
+     A  36                                  DSPATR(PC)
+     A            F0GROESSE      3A  B 14 23
+     A  37                                  DSPATR(RI)
+     A  37                                  DSPATR(PC)
+     A            F0AUGFARBE    10A  B 15 23
+     A  38                                  DSPATR(RI)
+     A  38                                  DSPATR(PC)
+     A                                      CHECK(LC)
+     A                                 14 27'cm'
+     A                                 10 32'JJJJMMDD'
+     A                                  4  2'Personalnummer. . .'
+     A            F0PERSNBR      6   O  4 23
+     A*---------------------------------------------------------------------
+     A          R F0MSGSFL                  SFL
+     A*---------------------------------------------------------------------
+     A                                      SFLMSGRCD(24)
+     A            Q_MSGKEY                  SFLMSGKEY
+     A            Q_PGMQUEUE                SFLPGMQ
+     A*---------------------------------------------------------------------
+     A          R F0MSGCTL                  SFLCTL(F0MSGSFL)
+     A*---------------------------------------------------------------------
+     A                                      SFLINZ
+     A                                      SFLSIZ(2)
+     A                                      SFLPAG(1)
+     A                                      SFLDSP
+     A N89                                  SFLEND
+     A            Q_PGMQUEUE                SFLPGMQ
