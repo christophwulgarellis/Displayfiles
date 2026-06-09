@@ -1,0 +1,85 @@
+     A*%%TS  SD  20251216  095030  KURS18      REL-V7R5M0  5770-WDS
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      PRINT
+     A                                      INDARA
+     A                                      ALTHELP(CA01)
+     A                                      CF02
+     A                                      CF03
+     A                                      CF04
+     A                                      CF05
+     A                                      CF06
+     A                                      CF07
+     A                                      CF08
+     A                                      CF09
+     A                                      CF10
+     A                                      CF11
+     A                                      CF12
+     A                                      CF13
+     A                                      CF14
+     A                                      CF15
+     A                                      CF16
+     A                                      CF17
+     A                                      CF18
+     A                                      CF19
+     A                                      CF20
+     A                                      CF21
+     A                                      CF22
+     A                                      CF23
+     A                                      CF24
+     A                                      PAGEUP(27)
+     A                                      PAGEDOWN(28)
+     A                                      HELP
+     A                                      VLDCMDKEY(25)
+     A          R F0RECORD
+     A*%%TS  SD  20251111  002214  DMR         REL-V7R5M0  5770-WDS
+     A                                      CHANGE(29)
+     A                                      RTNCSRLOC(&F0CSRFMT &F0CSRFLD &F0CS-
+     A                                      RPOS)
+     A                                      RTNCSRLOC(*WINDOW &LINE &POS)
+     A  86                                  CSRLOC(LINE       POS)
+     A                                      OVERLAY
+     A                                      KEEP
+     A            F0CSRFMT      10A  H
+     A            F0CSRFLD      10A  H
+     A            F0CSRPOS       4S 0H
+     A            POS            3S 0H
+     A            LINE           3S 0H
+     A            F0JOBNAME     10A  H
+     A            F0USER        10A  H
+     A            F0POS          3S 0H
+     A            F0LINE         3S 0H
+     A            F0PGMNAME     10A  O  1  2
+     A                                  1 31'Überschrift (Titel)'
+     A                                      COLOR(WHT)
+     A                                  1 61DATE(*SYS *YY)
+     A                                      EDTCDE(Y)
+     A                                  1 72TIME
+     A            F0USERID      10A  O  2  2
+     A                                  2 72SYSNAME
+     A                                  5  2'Daten eingeben und die Eingabetast-
+     A                                      e drücken.'
+     A                                      COLOR(BLU)
+     A                                  7  2'Bezeichnung . . . .'
+     A            F0FELD        50A  B  7 23
+     A  31                                  DSPATR(PC)
+     A  31                                  DSPATR(RI)
+     A                                      CHECK(LC)
+     A                                 23  2'F3=Abbrechen   F5=Aktualisieren   -
+     A                                      F12=Abbrechen'
+     A                                      COLOR(BLU)
+     A*---------------------------------------------------------------------
+     A          R F0MSGSFL                  SFL
+     A*---------------------------------------------------------------------
+     A                                      SFLMSGRCD(24)
+     A            Q_MSGKEY                  SFLMSGKEY
+     A            Q_PGMQUEUE                SFLPGMQ
+     A*---------------------------------------------------------------------
+     A          R F0MSGCTL                  SFLCTL(F0MSGSFL)
+     A*---------------------------------------------------------------------
+     A                                      SFLINZ
+     A                                      SFLSIZ(2)
+     A                                      SFLPAG(1)
+     A                                      SFLDSP
+     A N89                                  SFLEND
+     A            Q_PGMQUEUE                SFLPGMQ
