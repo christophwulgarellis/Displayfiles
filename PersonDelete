@@ -1,0 +1,97 @@
+     A*%%TS  SD  20260114  113655  KURS18      REL-V7R5M0  5770-WDS
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      PRINT
+     A                                      INDARA
+     A                                      ALTHELP(CA01)
+     A                                      CF02(02)
+     A                                      CF03(03)
+     A                                      CF04(04)
+     A                                      CF05(05)
+     A                                      CF06(06)
+     A                                      CF07(07)
+     A                                      CF08(08)
+     A                                      CF09(09)
+     A                                      CF10(10)
+     A                                      CF11(11)
+     A                                      CF12(12)
+     A                                      CF13(13)
+     A                                      CF14(14)
+     A                                      CF15(15)
+     A                                      CF16(16)
+     A                                      CF17(17)
+     A                                      CF18(18)
+     A                                      CF19(19)
+     A                                      CF20(20)
+     A                                      CF21(21)
+     A                                      CF22(22)
+     A                                      CF23(23)
+     A                                      CF24(24)
+     A                                      PAGEUP(27)
+     A                                      PAGEDOWN(28)
+     A                                      HELP
+     A                                      VLDCMDKEY(25)
+     A          R F0RECORD
+     A*%%TS  SD  20260114  113655  KURS18      REL-V7R5M0  5770-WDS
+     A                                      CHANGE(29)
+     A                                      RTNCSRLOC(&F0CSRFMT &F0CSRFLD &F0CS-
+     A                                      RPOS)
+     A                                      RTNCSRLOC(*WINDOW &LINE &POS)
+     A  86                                  CSRLOC(LINE       POS)
+     A                                      OVERLAY
+     A                                      KEEP
+     A            F0CSRFMT      10A  H
+     A            F0CSRFLD      10A  H
+     A            F0CSRPOS       4S 0H
+     A            POS            3S 0H
+     A            LINE           3S 0H
+     A            F0JOBNAME     10A  H
+     A            F0USER        10A  H
+     A            F0POS          3S 0H
+     A            F0LINE         3S 0H
+     A            F0PGMNAME     10A  O  1  2
+     A                                  1 31'Person löschen     '
+     A                                      COLOR(WHT)
+     A                                  1 61DATE(*SYS *YY)
+     A                                      EDTCDE(Y)
+     A                                  1 72TIME
+     A            F0USERID      10A  O  2  2
+     A                                  2 72SYSNAME
+     A                                  5  2'Eingabetaste drücken um diesen Dat-
+     A                                      ensatz zu '
+     A                                      COLOR(BLU)
+     A                                  7  2'Vorname . . . . . . . . . . '
+     A            F0VORNAME     50A  O  7 31
+     A                                  8  2'Nachname. . . . . . . . . .'
+     A            F0NACHNAME    50A  O  8 31
+     A                                  9  2'Titel . . . . . . . . . . . '
+     A            F0TITEL       10   O  9 31
+     A                                 10  2'Geburtsdatum. . . . . . . . '
+     A            F0GEBDATUM     8   O 10 31
+     A                                 11  2'Geburtsort  . . . . . . . .'
+     A            F0GEBORT      15   O 11 31
+     A                                 12  2'Nationalität. . . . . . . . '
+     A            F0NATION       2   O 12 31
+     A                                 14  2'Größe . . . . . . . . . . . '
+     A            F0GROESSE      3   O 14 31
+     A                                 14 36'cm'
+     A                                 15  2'Augenfarbe. . . . . . . . . '
+     A            F0AUGENFAR    10   O 15 31
+     A                                 23  2'F3=Abbrechen   F5=Aktualisieren   -
+     A                                      F12=Abbrechen'
+     A                                      COLOR(BLU)
+     A*---------------------------------------------------------------------
+     A          R F0MSGSFL                  SFL
+     A*---------------------------------------------------------------------
+     A                                      SFLMSGRCD(24)
+     A            Q_MSGKEY                  SFLMSGKEY
+     A            Q_PGMQUEUE                SFLPGMQ
+     A*---------------------------------------------------------------------
+     A          R F0MSGCTL                  SFLCTL(F0MSGSFL)
+     A*---------------------------------------------------------------------
+     A                                      SFLINZ
+     A                                      SFLSIZ(2)
+     A                                      SFLPAG(1)
+     A                                      SFLDSP
+     A N89                                  SFLEND
+     A            Q_PGMQUEUE                SFLPGMQ
